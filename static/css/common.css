@@ -1,0 +1,57 @@
+        /* 公共样式 */
+        header{
+            background:url(http://localhost:8081/images/main.png) no-repeat;
+            height:200px;
+        }
+        .blog-name{
+            font-size: 40px;
+            color: blue;
+        }
+        nav{
+            height: 50px;
+            background: black;
+            text-align: center;
+        }
+        nav ul>li{
+            display: block;
+            float:left;
+            margin-right:60px;
+        }
+        nav ul>li>a{
+            display: block;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+        }
+        nav .nav-input{
+            float: right;
+            position: relative;
+            line-height: 50px;
+        }
+        nav .nav-input input{
+            height: 30px;
+            vertical-align: middle;
+            border-radius: 10px;
+            border: none;
+            padding-left: 10px;
+            outline: none;
+            width: 100px;
+            transition: 1s 1s width;
+        }
+        nav .nav-input>input:hover{
+            width: 200px;
+            transition: 1s width;
+        }
+        nav .nav-input img{
+            position:absolute;
+            right: 10px;
+            top: 0;
+            bottom:0;
+            margin:auto 0;
+            height: 30px;
+            cursor: pointer;
+        }
+        .container{
+            width: 1180px;
+            margin: 0 auto;
+        }

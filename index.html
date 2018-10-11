@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        .blog-cell {
+            width: 800px;
+            height: 200px;
+            background: #FFF;
+            border: 1px solid;
+        }
+
+        .blog-cell .blog-cell-left {
+            margin-top: 25px;
+            float: left;
+            width: 220px;
+        }
+        .blog-cell-right{
+            margin-top: 25px;
+            float: right;
+            width: 560px;
+        }
+        .blog-cell-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+        }
+        .blog-cell-content{
+            line-height: 22px;
+            margin-top: 10px;
+            font-size: 15px;
+            height: 66px;
+            overflow: hidden;
+            position: relative;
+        }
+        .blog-cell-content::after{
+            content: "..."; 
+            background: #FFF;
+            position: absolute;
+            bottom: 0; 
+            right: 0;
+            width: 154px;
+        }
+        .blog-cell-info {
+            font-size: 10px;
+            float: right;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+        <div class="blog-cell">
+            <div class="blog-cell-left">
+                <a class="blog-cell-img" href="#">
+                    <img src="https://qiniu.blog.quietguoguo.com/wp-content/uploads/2018/10/website2app-220x150.png">
+                </a>
+            </div>
+            <div class="blog-cell-right">
+                <h2 class="blog-cell-title">
+                    <a href="#">书评</a>
+                </h2>
+                
+                <div class="blog-cell-content">上的涩涩的水水水水水水水水才是事实是事实是事实是
+                    事实是事实是事实水水水水水水是顶顶顶顶
+                    杀杀杀杀杀水水水水城市水水水水水水水水水水踩踩踩踩踩踩踩踩踩踩踩踩从水水水水水水水水水水水水水水水杀杀杀杀水水顶顶顶顶顶顶顶杀杀杀杀啊啊啊啊啊啊啊啊啊啊啊啊
+                    啊啊啊啊啊啊啊杀杀顶顶顶顶水水<a href="#" style="padding-left:5px">详情</a></div>
+                <p class="blog-cell-info">
+                    <span>袁立狄</span> @ <time>2018年10月11日</time>
+                </p>
+            </div>
+        </div>
+        <div class="blog-cell">
+                <div class="">
+                    <a class="blog-title" href="blog/detial?id=${id}" data-id="${id}">
+                        ${title}
+                    </a>
+                </div>
+                <div class="blog-information">
+                    <span>${author}</span> @ <time>${time}</time>
+                </div>
+            </div>
+</body>
+
+</html>

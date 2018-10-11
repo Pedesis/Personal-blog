@@ -31,10 +31,11 @@
     
     /* custom */
     a {
-        color: #7e8c8d;
+        color: #000;
         text-decoration: none;
     }
     li {
+        display: block;
         list-style: none;
     }
     .clearfix::after{

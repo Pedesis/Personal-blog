@@ -66,9 +66,10 @@ var blogAll = function() {
 
 //增加内容详情
 var blogTemplate = function(blog) {
-    var id = blog.id
-    var title = blog.title
-    var author = blog.author
+    var id = blog.id;
+    var title = blog.title;
+    var author = blog.author;
+    var content=blog.content;
     var d = new Date(blog.created_time * 1000)
     var time = d.toLocaleString()
     var t = `
@@ -79,6 +80,7 @@ var blogTemplate = function(blog) {
             </a>
         </div>
         <div class="blog-information">
+            <div>${content}</div>
             <span>${author}</span> @ <time>${time}</time>
         </div>
     </div>

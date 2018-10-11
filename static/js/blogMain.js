@@ -19,22 +19,30 @@ var ajax=function(request){
 }
 
 var blogTemplate = function(blog) {
-    var id = blog.id
-    var title = blog.title
-    var author = blog.author
+    var id = blog.id;
+    var title = blog.title;
+    var author = blog.author;
+    var content=blog.content;
     var d = new Date(blog.created_time * 1000)
     var time = d.toLocaleString()
     var t = `
     <div class="blog-cell">
-        <div class="">
-            <a class="blog-title" href="blog/detial?id=${id}" data-id="${id}">
-                ${title}
-            </a>
-        </div>
-        <div class="blog-information">
-            <span>${author}</span> @ <time>${time}</time>
-        </div>
+    <div class="blog-cell-left">
+        <a class="blog-cell-img" href="blog/detial?id=${id}" data-id="${id}">
+            <img src="https://qiniu.blog.quietguoguo.com/wp-content/uploads/2018/10/website2app-220x150.png">
+        </a>
     </div>
+    <div class="blog-cell-right">
+        <h2 class="blog-cell-title">
+            <a href="blog/detial?id=${id}">${title}</a>
+        </h2>
+        
+        <div class="blog-cell-content">${content}</div>
+        <p class="blog-cell-info">
+            <span>${author}</span> @ <time>${time}</time>
+        </p>
+    </div>
+</div>
     `
     return t
 }

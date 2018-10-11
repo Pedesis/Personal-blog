@@ -6,63 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>pedesis个人博客</title>
     <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/common.css">
     <style>
-        /* 公共样式 */
-        header{
-            background:url(images/main.png) no-repeat;
-            height:200px;
-        }
-        .blog-name{
-            font-size: 40px;
-            color: blue;
-        }
-        nav{
-            height: 50px;
-            background: black;
-            text-align: center;
-        }
-        nav ul>li{
-            display: block;
-            float:left;
-            margin-right:60px;
-        }
-        nav ul>li>a{
-            display: block;
-            text-align: center;
-            line-height: 50px;
-            color: white;
-        }
-        nav .nav-input{
-            float: right;
-            
-            line-height: 50px;
-        }
-        nav input{
-            height: 30px;
-            vertical-align: middle;
-            border-radius: 10px;
-            border: none;
-            padding-left: 10px;
-            outline: none;
-            width: 100px;
-            transition: 1s width;
-        }
-        nav .nav-input>input:hover{
-            width: 200px;
-            transition: 1s width;
-        }
-        .container{
-            width: 1180px;
-            margin: 0 auto;
-        }
+
         /* 本页样式 */
     .main{
         padding-top:20px;
         background: rgb(231, 230, 231);
-        
+        overflow: hidden;
     }
     .main .main-left{
         width: 800px;
+        float: left;
     }
         /* 轮播图样式 */
     .wrap{
@@ -104,7 +59,7 @@
     .slideshow .dot>a.active{
         background: red;
     }
-    /*main-left*/
+    /*主题main-left*/
     .main-left .main-title{
         margin: 10px 0;
     }
@@ -118,6 +73,91 @@
     }
     .main-left .main-title span.time{
         float: right;
+    }
+     /*主题main-right*/
+    /* 关注我 */
+    .main-right {
+        float: right;
+        width: 340px;
+    }
+    .main-right .beside-item h3{
+        padding-bottom: 10px;
+        font-weight: bold;
+        border-bottom: 1px solid;
+        margin-bottom: 30px;
+    }
+    .main-right .beside-item .item-l{
+        margin-bottom: 30px;
+        line-height: 35px;
+    }
+    .main-right .link-me ul li{
+        float: left;
+        margin-right: 30px;
+    }
+    .main-right .link-me ul li a{
+        display: block;
+        width: 52px;
+        text-align: center;
+    }
+    .main-right .link-me ul li a img{
+        width: 52px;
+    }
+
+    #content .blog-cell {
+            width: 800px;
+            height: 200px;
+            background: #FFF;
+            border-bottom: 1px solid;
+        }
+
+        .blog-cell .blog-cell-left {
+            margin-top: 25px;
+            float: left;
+            width: 220px;
+        }
+        .blog-cell-right{
+            margin-top: 25px;
+            float: right;
+            width: 560px;
+        }
+        .blog-cell-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+        }
+        .blog-cell-content{
+            line-height: 22px;
+            margin-top: 10px;
+            font-size: 15px;
+            height: 66px;
+            overflow: hidden;
+            position: relative;
+        }
+        .blog-cell-content::after{
+            content: "..."; 
+            background: #FFF;
+            position: absolute;
+            bottom: 0; 
+            right: 0;
+            width: 154px;
+        }
+        .blog-cell-info {
+            font-size: 10px;
+            float: right;
+            color: #000;
+        }
+    /* 最新文章 */
+    #new-articles{
+        font-size: 17px;
+    }
+    #new-articles .dot{
+        width: 5px;
+        height: 5px;
+        margin-right: 10px;
+        vertical-align: middle;
+        display: inline-block;
+        background: black;
+        
     }
     </style>
     
@@ -143,7 +183,7 @@
                     </ul>
                     <div class="nav-input">  
                         <input type="search" placeholder="搜索">
-
+                        <img src="images/search.png" alt="">
                     </div>
         </div>
     </nav>
@@ -179,20 +219,32 @@
             <span class="title">最新文章</span><span class="time">2018年10月11日  更新</span>
         </div>
         <div id="content">
-                <div class="blog-cell">
-                        <div class="">
-                            <a class="blog-title" href="blog/detial?id=${id}" data-id="${id}">
-                                ${title}
-                            </a>
-                        </div>
-                        <div class="blog-information">
-                            <span>${author}</span> @ <time>${time}</time>
-                        </div>
+  
+        </div>
+        </div>
+        <div class="main-right">
+                <div class="link-me beside-item">
+                    <h3>关注我</h3>
+                        <ul class="clearfix item-l">
+                            <li><a href="#"><img src="images/link-icon1.png" alt="" srcset="">邮箱</a></li>
+                            <li><a href="#"><img src="images/link-icon2.png" alt="" srcset="">微博</a></li>
+                            <li><a href="#"><img src="images/link-icon3.png" alt="" srcset="">微信</a></li>
+                            <li><a href="#"><img src="images/link-icon4.png" alt="" srcset="">QQ</a></li>
+                        </ul>
                 </div>
+                <div class="recent-posts beside-item">
+                    <h3>最新文章</h3>
+                    <ol class="item-l" id="new-articles">
+                        <li><div class="dot"></div><a href="#">规定有序列表的起始值。</a></li>
+                        <li><div class="dot"></div><a href="#">规定有序列表的起始值。</a></li>
+                        <li><div class="dot"></div><a href="#">规定有序列表的起始值。</a></li>
+                        <li><div class="dot"></div><a href="#">规定有序列表的起始值。</a></li>
+                        <li><div class="dot"></div><a href="#">规定有序列表的起始值。</a></li>
+                    </ol>
+            </div>
         </div>
         </div>
-        <div class="main-right"></div>
-    </div>
+
 </div>
 
 </body>
@@ -226,7 +278,6 @@ function next(){
     }
     index++;
     slideShowUl.style.left=-(index*liWidth)+"px";
-    log("next",slideShowLi.offsetWidth);
     points();
 }
 function prev(){
