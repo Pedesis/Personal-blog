@@ -60,7 +60,7 @@ app.post("/api/blog/add",function(request,response){
 
 app.post("/api/comment/add",function(request,response){
     var form=request.body;
-    console.log("request",request);
+    //console.log("request",request);
     //插入道blog.js的b中
     var b=comment.new(form);
     var r=JSON.stringify(b);

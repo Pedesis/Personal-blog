@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,331 +8,125 @@
     <title>pedesis个人博客</title>
     <link rel="stylesheet" href="css/reset.css" type="text/css">
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/blog.css">
     <style>
 
-        /* 本页样式 */
-    .main{
-        padding-top:20px;
-        background: rgb(231, 230, 231);
-        overflow: hidden;
-    }
-    .main .main-left{
-        width: 800px;
-        float: left;
-    }
-        /* 轮播图样式 */
-    .wrap{
-        width: 800px;
-        height: 280px;
-        overflow: hidden;
-        position: relative;
-    }
-    .slideshow ul{
-        width: 4000px;
-        height: 100%; 
-        position: absolute;
-        left:0;
-        top:0;
-    }
-    .slideshow ul li{
-        width: 800px; 
-        display: block;
-        float: left;
-    }
-    .slideshow ul li img{
-        width: 100%;
-    }
-    .slideshow .dot{
-        position: absolute;
-        bottom: 15px;
-        left:50%;
-        transform: translateX(-50%);
-        
-    }
-    .slideshow .dot>a{
-        width: 10px;
-        height: 10px;
-        display: block;
-        background: green;
-        float: left;
-        margin-right:10px;
-    }
-    .slideshow .dot>a.active{
-        background: red;
-    }
-    /*主题main-left*/
-    .main-left .main-title{
-        margin: 10px 0;
-    }
-    .main-left .main-title span{
-        display:block;
-    }
-    .main-left .main-title span.title{
-        float: left;
-        font-weight: bold;
-
-    }
-    .main-left .main-title span.time{
-        float: right;
-    }
-     /*主题main-right*/
-    /* 关注我 */
-    .main-right {
-        float: right;
-        width: 340px;
-    }
-    .main-right .beside-item h3{
-        padding-bottom: 10px;
-        font-weight: bold;
-        border-bottom: 1px solid;
-        margin-bottom: 30px;
-    }
-    .main-right .beside-item .item-l{
-        margin-bottom: 30px;
-        line-height: 35px;
-    }
-    .main-right .link-me ul li{
-        float: left;
-        margin-right: 30px;
-    }
-    .main-right .link-me ul li a{
-        display: block;
-        width: 52px;
-        text-align: center;
-    }
-    .main-right .link-me ul li a img{
-        width: 52px;
-    }
-
-    #content .blog-cell {
-            width: 800px;
-            height: 200px;
-            background: #FFF;
-            border-bottom: 1px solid;
-        }
-
-        .blog-cell .blog-cell-left {
-            margin-top: 25px;
-            float: left;
-            width: 220px;
-        }
-        .blog-cell-right{
-            margin-top: 25px;
-            float: right;
-            width: 560px;
-        }
-        .blog-cell-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #000;
-        }
-        .blog-cell-content{
-            line-height: 22px;
-            margin-top: 10px;
-            font-size: 15px;
-            height: 66px;
-            overflow: hidden;
-            position: relative;
-        }
-        .blog-cell-content::after{
-            content: "..."; 
-            background: #FFF;
-            position: absolute;
-            bottom: 0; 
-            right: 0;
-            width: 154px;
-        }
-        .blog-cell-info {
-            font-size: 10px;
-            float: right;
-            color: #000;
-        }
-    /* 最新文章 */
-    #new-articles{
-        font-size: 17px;
-    }
-    #new-articles .dot{
-        width: 5px;
-        height: 5px;
-        margin-right: 10px;
-        vertical-align: middle;
-        display: inline-block;
-        background: black;
-        
-    }
     </style>
-    
+
 </head>
+
 <body>
     <header>
         <a class="blog-name" href="/template/blog_home.html">Pedesis</a>
         <span>blog</span>
     </header>
     <nav>
-        <div class="container">
-                <ul>
-                        <li><a href="#">首页</a>
-                        </li>
-                        <li><a href="#">前端拾贝</a>
-                        </li>
-                        <li><a href="#">技术分享</a>
-                        </li>
-                        <li><a href="#">生活笔记</a>
-                        </li>
-                        <li><a href="#">关于我</a>
-                        </li>
-                    </ul>
-                    <div class="nav-input">  
-                        <input type="search" placeholder="搜索">
-                        <img src="images/search.png" alt="">
-                    </div>
+        <div class="container nav-container">
+            <ul>
+                <li><a href="#">首页</a>
+                </li>
+                <li><a href="#">前端拾贝</a>
+                </li>
+                <li><a href="#">技术分享</a>
+                </li>
+                <li><a href="#">生活笔记</a>
+                </li>
+                <li><a href="#">关于我</a>
+                </li>
+            </ul>
+            <div class="nav-input">
+                <input type="search" placeholder="搜索">
+                <img src="images/search.png" alt="">
+            </div>
         </div>
     </nav>
-<div class="main">
+    <div class="main">
         <div class=" container">
-        <div class="main-left">
-        <div class="slideshow wrap">
-            <ul>
-                <li><a href="#">
-                    <img src="images/1.jpeg" >
-                </a></li>
-                <li><a href="#">
-                    <img src="images/2.jpeg">
-                </a></li>
-                <li><a href="#">
-                    <img src="images/3.jpeg">
-                </a></li>
-                <li><a href="#">
-                    <img src="images/4.jpeg">
-                </a></li>
-                <li><a href="#">
-                        <img src="images/1.jpeg">
-                </a></li>
-            </ul>    
-        <div class="dot">
-            <a href="javascript:;"  class="active"></a>
-            <a href="javascript:;" ></a>
-            <a href="javascript:;" ></a>
-            <a href="javascript:;" ></a>
-        </div>
-        </div>
-        <div class="main-title clearfix">
-            <span class="title">最新文章</span><span class="time">2018年10月11日  更新</span>
-        </div>
-        <div id="content">
-  
-        </div>
-        </div>
-        <div class="main-right">
+            <div class="main-left">
+                <div class="slideshow wrap">
+                    <ul>
+                        <li><a href="#">
+                                <img src="images/1.jpeg">
+                            </a></li>
+                        <li><a href="#">
+                                <img src="images/2.jpeg">
+                            </a></li>
+                        <li><a href="#">
+                                <img src="images/3.jpeg">
+                            </a></li>
+                        <li><a href="#">
+                                <img src="images/4.jpeg">
+                            </a></li>
+                        <li><a href="#">
+                                <img src="images/1.jpeg">
+                            </a></li>
+                    </ul>
+                    <div class="dot">
+                        <a href="javascript:;" class="active"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                    </div>
+                </div>
+                <div class="main-title clearfix">
+                    <span class="title">最新文章</span><span class="time">2018年10月11日 更新</span>
+                </div>
+                <div id="blog-content">
+
+                </div>
+            </div>
+            <div class="main-right">
                 <div class="link-me beside-item">
                     <h3>关注我</h3>
-                        <ul class="clearfix item-l">
-                            <li><a href="#"><img src="images/link-icon1.png" alt="" srcset="">邮箱</a></li>
-                            <li><a href="#"><img src="images/link-icon2.png" alt="" srcset="">微博</a></li>
-                            <li><a href="#"><img src="images/link-icon3.png" alt="" srcset="">微信</a></li>
-                            <li><a href="#"><img src="images/link-icon4.png" alt="" srcset="">QQ</a></li>
-                        </ul>
+                    <ul class="clearfix item-l">
+                        <li><a href="#"><img src="images/link-icon1.png" alt="" srcset="">邮箱</a></li>
+                        <li><a href="#"><img src="images/link-icon2.png" alt="" srcset="">微博</a></li>
+                        <li><a href="#"><img src="images/link-icon3.png" alt="" srcset="">微信</a></li>
+                        <li><a href="#"><img src="images/link-icon4.png" alt="" srcset="">QQ</a></li>
+                    </ul>
                 </div>
                 <div class="recent-posts beside-item">
                     <h3>最新文章</h3>
-                    <ol class="item-l" id="new-articles">
-                        <li><div class="dot"></div><a href="#">规定有序列表的起始值。</a></li>
-                        <li><div class="dot"></div><a href="#">规定有序列表的起始值。</a></li>
-                        <li><div class="dot"></div><a href="#">规定有序列表的起始值。</a></li>
-                        <li><div class="dot"></div><a href="#">规定有序列表的起始值。</a></li>
-                        <li><div class="dot"></div><a href="#">规定有序列表的起始值。</a></li>
-                    </ol>
+                    <ul class="item-l" id="new-articles">
+                        <li>
+                            <div class="dot"></div><a href="#">规定有序列表的起始值。</a>
+                        </li>
+                        <li>
+                            <div class="dot"></div><a href="#">规定有序列表的起始值。</a>
+                        </li>
+                        <li>
+                            <div class="dot"></div><a href="#">规定有序列表的起始值。</a>
+                        </li>
+                        <li>
+                            <div class="dot"></div><a href="#">规定有序列表的起始值。</a>
+                        </li>
+                        <li>
+                            <div class="dot"></div><a href="#">规定有序列表的起始值。</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-        </div>
 
-</div>
-
+    </div>
+    <div class="toTop">
+        <img src="/images/top.png">
+    </div>
 </body>
-<script>
-//console.log封装
-var log=function(){
-    console.log.apply(console,arguments);
-}
-//queryseletor封装
-var findElement=function(element){
-    return document.querySelector(element)
-}
-//queryseletorAll封装
-var findElements=function(elements){
-    return document.querySelectorAll(elements);
-}
-</script>
+<script src="http://localhost:8081/js/blogCommon.js"></script>
 <script src="js/blogMain.js"></script>
+<script src="http://localhost:8081/js/bloghome.js"></script>
 <script>
-//轮播图
-var slideshow=function(){
-var slideShowUl=document.querySelector(".slideshow ul");
-var aNode=document.querySelectorAll(".slideshow .dot>a");
-var slideShowLi=slideShowUl.querySelectorAll(".slideshow ul>li");
-var flag=0;
-var index=0;
-var liWidth=slideShowLi[0].offsetWidth;
-function next(){
-    if(index==4){
-        index=0;
-    }
-    index++;
-    slideShowUl.style.left=-(index*liWidth)+"px";
-    points();
-}
-function prev(){
-    if(index==0){
-        index=4;
-    }
-    index--;
-   
-    slideShowUl.style.left=-(index*liWidth)+"px";
-    points();
-}
-/*左右点击下一张
-nextNode.onclick=function(){
-    clearInterval(timer);
-    next();
-    move();
+    //最新文章获取
+    var blogNewArticle=function(){
+        var newArticle=findElements("#new-articles li a");
+        for(var i=0;i<newArticle.length;i++){
 
-}
-prevNode.onclick=function(){
-    clearInterval(timer);
-    prev();
-    move();
-}
-*/
-var timer=0;
-//move();
-function points(){
-    for(var i=0;i<aNode.length;i++){
-    aNode[i].className="";
-   }
-if(index==4){
-    index=0;
-}
-aNode[index].className="active";
-}
-for(var i=0;i<aNode.length;i++){
-    aNode[i].num=i;
-    aNode[i].onclick=function(){
-        clearInterval(timer);
-        slideShowUl.style.left=-(this.num*liWidth)+"px";
-        index=this.num;
-        points();
-        move();
-    }
-}
-function move(){
-    clearInterval(timer);
-    timer=setInterval(function(){
-        next();
-        
-    },1000)
-}
-move();
-}
-slideshow();
+            log(blogs);
+            newArticle[i].innerText=blogs[i].title;
+            newArticle[i].href="blog/detial?id="+blogs[i].id;
+        }
+     };
+     blogNewArticle();
 </script>
 </html>
