@@ -71,7 +71,7 @@ var blogNew=function(form){
     //     author: "gua",
     //     content: "测试内容",
     //         };
-    var data = JSON.stringify(form)
+    var data = JSON.stringify(form);
     var request = {
         method: 'POST',
         url: '/api/blog/add',
@@ -94,7 +94,7 @@ var blogNew=function(form){
 var bindEvents=function(){
     var button=findElement("#id-button-submit");
     button.addEventListener("click",function(){
-        log("button",1);
+        //log("button",1);
         var form={
             title:findElement("#id-input-title").value,
             author:findElement("#id-input-author").value,

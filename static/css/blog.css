@@ -34,12 +34,15 @@
             width: 10px;
             height: 10px;
             display: block;
-            background: green;
+            background: #fff;
             float: left;
             margin-right:10px;
+            border-radius: 50%;
+
         }
         .slideshow .dot>a.active{
-            background: red;
+            background: #3333337d;
+            opacity: .6;
         }
         /* 加载的文章列表样式 */
         .main-left .main-title{
@@ -68,8 +71,13 @@
                 height: 200px;
                 background: #FFF;
                 margin-bottom: 10px;
+                border-bottom: 1px solid #f0f0f0;
             }
-    
+            #blog-content .blog-cell:hover{
+                border-radius: 4px;
+                box-shadow: 1px 3px 9px #ccc;
+                transition: .3s;
+            }
             .blog-cell .blog-cell-left {
                 margin-top: 25px;
                 margin-left:10px;

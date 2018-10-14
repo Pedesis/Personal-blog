@@ -23,7 +23,7 @@ app.get("/blog/write",function(request, response) {
 })
 //获取详情页
 app.get("/blog/detial",function(request, response) {
-    console.log(request.query.id);
+    //console.log(request.query.id);
     var path = 'blog_detial.html';
     sendHtml(path, response);
 })

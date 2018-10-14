@@ -1,7 +1,7 @@
         /* 公共样式 */
         header{
             background:url(http://localhost:8081/images/main.png) no-repeat;
-            height:200px;
+            height:150px;
         }
         .blog-name{
             font-size: 40px;

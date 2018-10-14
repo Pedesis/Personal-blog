@@ -16,6 +16,7 @@
 </head>
 
 <body>
+
     <header>
         <a class="blog-name" href="/template/blog_home.html">Pedesis</a>
         <span>blog</span>
@@ -112,16 +113,19 @@
     <div class="toTop">
         <img src="/images/top.png">
     </div>
+
 </body>
 <script src="http://localhost:8081/js/blogCommon.js"></script>
 <script src="js/blogMain.js"></script>
 <script src="http://localhost:8081/js/bloghome.js"></script>
+
+<script color="255,0,0"opacity="0.5" count="99" src="http://localhost:8081/js/canvas-nest.js"></script>
+
 <script>
     //最新文章获取
     var blogNewArticle=function(){
         var newArticle=findElements("#new-articles li a");
         for(var i=0;i<newArticle.length;i++){
-
             log(blogs);
             newArticle[i].innerText=blogs[i].title;
             newArticle[i].href="blog/detial?id="+blogs[i].id;

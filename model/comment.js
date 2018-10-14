@@ -5,8 +5,8 @@ var fs = require('fs');
 const ModelComment=function(form){
     this.title=form.title||"";
     this.content=form.content||"";
-    this.id=from.id||0;
-    this.blog_id=from.blog_id||0;
+    this.id=form.id||0;
+    this.blog_id=form.blog_id||0;
 }
 //加载数据
 const loadBlogs=function(){
