@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0;padding: 0;
+    }
+    .wrap{
+            width: 800px;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+        .slideshow ul{
+            width: 4000px;
+            height: 100%; 
+            position: absolute;
+            left:0;
+            top:0;
+        }
+        .slideshow ul li{
+            width: 800px; 
+            display: block;
+            float: left;
+        }
+        .slideshow ul li img{
+            width: 100%;
+        }
+        .slideshow .dot{
+            position: absolute;
+            bottom: 15px;
+            left:50%;
+            transform: translateX(-50%);
+            
+        }
+        .slideshow .dot>a{
+            width: 10px;
+            height: 10px;
+            display: block;
+            background: #fff;
+            float: left;
+            margin-right:10px;
+            border-radius: 50%;
+
+        }
+        .slideshow .dot>a.active{
+            background: #3333337d;
+            opacity: .6;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow wrap">
+        <ul>
+            <li><a href="#">
+                    <img src="static/images/1.jpeg">
+                </a></li>
+            <li><a href="#">
+                    <img src="static/images/2.jpeg">
+                </a></li>
+            <li><a href="#">
+                    <img src="static/images/3.jpeg">
+                </a></li>
+            <li><a href="#">
+                    <img src="static/images/4.jpeg">
+                </a></li>
+            <li><a href="#">
+                    <img src="static/images/1.jpeg">
+                </a></li>
+        </ul>
+        <div class="dot">
+            <a href="javascript:;" class="active"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </div>
+</body>
+<script>
+    //轮播图
+    var slideshow = function () {
+        var slideShowUl = document.querySelector(".slideshow ul");
+        var aNode = document.querySelectorAll(".slideshow .dot>a");
+        var slideShowLi = slideShowUl.querySelectorAll(".slideshow ul>li");
+        var index = 0;
+        var liWidth = slideShowLi[0].offsetWidth;
+        var ulTimer=0;
+       // function next() {
+            
+           // var speed=2;
+            //slideShowUl.style.left = -(index * liWidth) + "px";
+            // if (index == 4) {
+            //     index = 0;
+            //     }
+               // console.log(index);
+           
+            //points();
+        
+       // }
+        function getStyle(obj, name) {
+            return window.getComputedStyle && getComputedStyle(obj, null)[name] || obj.currentStyle[name];
+        }
+        var ulMove=function(target,speed,callback){
+                console.log(target);
+                clearInterval(ulTimer);
+                var current=parseInt(getStyle(slideShowUl, "left"));
+                if(current > target) {
+                    speed = -speed;
+                }
+                ulTimer=setInterval(function(){
+                    var oldValue = parseInt(getStyle(slideShowUl, "left"));
+                    var newValue = oldValue + speed;
+                    if((speed < 0 && newValue < target) || (speed > 0 && newValue > target)) {
+                        newValue = target;
+                    }
+                    slideShowUl.style.left=  newValue+"px";
+                    
+                    if(newValue==target){
+                       // console.log(newValue,target);
+                        clearInterval(ulTimer);
+                        callback();
+                        
+                    }
+                },30)
+        }
+        // function prev() {
+        //     if (index == 0) {
+        //         index = 4;
+        //     }
+        //     index--;
+        //     slideShowUl.style.left = -(index * liWidth) + "px";
+        //     points();
+        // }
+        /*左右点击下一张
+        nextNode.onclick=function(){
+            clearInterval(timer);
+            next();
+            move();
+        
+        }
+        prevNode.onclick=function(){
+            clearInterval(timer);
+            prev();
+            move();
+        }
+        */
+        var timer = 0;
+        //move();
+        function points() {
+  
+            if (index>=4) {
+                console.log(index);
+                index = 0;
+                slideShowUl.style.left=0;
+            }
+            for (var i = 0; i < aNode.length; i++) {
+                aNode[i].className = "";
+            }
+            aNode[index].className = "active";
+        }
+        for (let i = 0; i < aNode.length; i++) {
+            //aNode[i].num = i;
+            aNode[i].onclick = function () {
+                clearInterval(timer);    
+                index = i;
+                slideShowUl.style.left = -(i * liWidth) + "px";
+                points();
+                ulMove(-800*index,20,function(){
+                    move();
+                });
+            }
+        }
+        function move() {
+            clearInterval(timer);
+            timer = setInterval(function () {
+                
+                index++;
+                //if(index>=5){
+                    index=index%(aNode.length+1);
+                //}
+               console.log(index);
+                ulMove(-800*index,20,function(){
+                    points();
+                })
+                //next();
+
+            },3000)
+        }
+        move();
+    }
+    slideshow();
+</script>
+</html>

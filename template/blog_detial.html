@@ -22,7 +22,7 @@
             <ul>
                 <li><a href="#">首页</a>
                 </li>
-                <li><a href="#">前端拾贝</a>
+                <li><a href="#">计划表</a>
                 </li>
                 <li><a href="#">技术分享</a>
                 </li>
@@ -65,9 +65,9 @@
                     </div>
                 </div>
                 <div id="comment">
-                    <p>评论列表</p>
+                    <p class="comment-list">评论列表</p>
                     <div class="all-comment">
-
+                        <img src="http://localhost:8081/images/cat.png" alt="">
                     </div>
                 </div>
             </div>
@@ -142,7 +142,7 @@
         var t = `
         <div class="blog-article">
             <div class="blog-place">
-                <span>您现在所在位置:</span>首页<span>&gt;</span>文章详情<span>&gt;
+                <span>您现在所在位置:</span><a href="http://localhost:8081/">首页</a><span>&gt;</span>文章详情<span>&gt;
                 </div>
                 <h1>${title}</h1>
                 <div class="article-detial"><span>作者:${author}</span><span>时间:${time}</span></div>
@@ -166,9 +166,15 @@
             var title=comment[i].title;
             var content=comment[i].content;
             t=`
-            <h1>反对反对</h1>
-            <div>${title}</div>
-            <div>${content}</div>
+            <div class="comment-cell"><img src="http://localhost:8081/images/cat.png" alt=""> 
+                <div class="cell-content">
+                <p>${title}</p>
+                <p>${content}</p>
+                </div>
+                
+                </div>
+           
+            
             `
             ts+=t;
         }
@@ -195,7 +201,7 @@
         }
         // 把数据写入 直接用覆盖式写入
         var div = document.querySelector('#comment-content');
-        var comDiv = document.querySelector('#comment');
+        var comDiv = document.querySelector('#comment .all-comment');
         div.innerHTML = blogHtml;
         comDiv.innerHTML = commentHtml;
     }
@@ -211,7 +217,7 @@
             content:cc,
             blog_id:id,
         }
-        
+        commentContent.value="";
         Addcomment(form);
 
     }
@@ -226,8 +232,9 @@
         callback: function(response) {
             console.log('响应', response)
             var res = JSON.parse(response)
+            window.location.reload();
             if (res.success) {
-                // window.location.href = '/'
+            
                 log("成功");
             } else {
                 // alert('登录失败')
@@ -245,10 +252,10 @@
 
             log(blogs);
             newArticle[i].innerText=blogs[i].title;
-            newArticle[i].href="blog/detial?id="+blogs[i].id;
+            newArticle[i].href="http://localhost:8081/blog/detial?id="+blogs[i].id;
         }
-     };
-     blogNewArticle();
+    };
+    blogNewArticle();
 </script>
 
 </html>
